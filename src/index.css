@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import 'tailwindcss';
+
+
+* {
+  box-sizing: border-box;
+}
+
+@theme {
+  --font-sans: 'Outfit', sans-serif;
+  --color-border: #e8e8e8;
+  --color-black: #1a1a1a;
+  --color-neutral-10: #6b6b6b;
+  --color-neutral-20: #9e9e9e;
+  --color-primary: #e91e8c;
+  --color-primary-light: #fce4f3;
+  --color-avatar-pink: #f48cbb;
+}
+
+@keyframes submenu-open {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-submenu {
+  animation: submenu-open 200ms ease-out forwards;
+}
