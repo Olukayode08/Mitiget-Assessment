@@ -6,7 +6,6 @@ import {
   ArrowExpandDiagonal02Icon,
 } from '@hugeicons/core-free-icons'
 import { useNavigate } from 'react-router'
-import { useState } from 'react'
 import { NAV_CONFIG } from '../utils/constants'
 
 interface SidebarProps {
@@ -25,7 +24,6 @@ const DashboardSidebar = ({
   toggleCollapse,
 }: SidebarProps) => {
   const navigate = useNavigate()
-  const [openLabel, setOpenLabel] = useState<string | null>(null)
 
   const handleNavigate = (path: string) => {
     navigate(path)
@@ -87,8 +85,6 @@ const DashboardSidebar = ({
                     item={item}
                     activePath={activePath}
                     onNavigate={handleNavigate}
-                    openLabel={openLabel}
-                    setOpenLabel={setOpenLabel}
                     collapsed={collapsed}
                   />
                 ))}

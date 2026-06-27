@@ -1,13 +1,12 @@
 import { HugeiconsIcon } from '@hugeicons/react'
 import { ArrowDown01Icon } from '@hugeicons/core-free-icons'
 import type { NavItem } from '../types/layout.types'
+import { useState } from 'react'
 
 type SidebarNavItemProps = {
   item: NavItem
   activePath: string
   onNavigate: (path: string) => void
-  openLabel: string | null
-  setOpenLabel: (label: string | null) => void
   collapsed?: boolean
 }
 
@@ -15,10 +14,10 @@ const SidebarNavItem = ({
   item,
   activePath,
   onNavigate,
-  openLabel,
-  setOpenLabel,
   collapsed = false,
 }: SidebarNavItemProps) => {
+  const [openLabel, setOpenLabel] = useState<string | null>(null)
+
   const hasSubPages = Boolean(item.subPages?.length)
   const isSubActive = hasSubPages
     ? item.subPages!.some((s) => s.path === activePath)
